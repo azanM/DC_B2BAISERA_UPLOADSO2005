@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="CUSTOM_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebServiceName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MethodName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Acknowledge" Type="bit" Nullable="false" />
+    <Property Name="TicketNo" Type="varchar" MaxLength="1000" />
+    <Property Name="Message" Type="varchar" MaxLength="200" />
+    <Property Name="FileType" Type="varchar" MaxLength="10" />
+    <Property Name="CreatedWho" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedWhen" Type="datetime" Nullable="false" />
+    <Property Name="ChangedWho" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChangedWhen" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTOM_S02005_HS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionDataID" Type="int" />
+    <Property Name="GroupingCode" Type="varchar" MaxLength="18" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="version" Type="int" />
+    <Property Name="TotalPayment" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="dibuatOleh" Type="varchar" MaxLength="50" />
+    <Property Name="dibuatTanggal" Type="datetime" />
+    <Property Name="diubahOleh" Type="varchar" MaxLength="50" />
+    <Property Name="diubahTanggal" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_S02005_IS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionDataID" Type="int" />
+    <Property Name="GroupingCode" Type="varchar" MaxLength="18" />
+    <Property Name="paymentDate" Type="datetime" />
+    <Property Name="version" Type="int" />
+    <Property Name="BillingNo" Type="varchar" MaxLength="15" />
+    <Property Name="KuitansiNo" Type="varchar" MaxLength="15" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+    <Property Name="BusinessAreaCode" Type="varchar" MaxLength="4" />
+    <Property Name="CustomerNo" Type="varchar" MaxLength="10" />
+    <Property Name="SpesNumber" Type="varchar" MaxLength="35" />
+    <Property Name="SONumber" Type="varchar" MaxLength="15" />
+    <Property Name="Salesman" Type="varchar" MaxLength="10" />
+    <Property Name="ChasisNumber" Type="varchar" MaxLength="18" />
+    <Property Name="PONumberSERA" Type="varchar" MaxLength="50" />
+    <Property Name="VersionPOSERA" Type="int" />
+    <Property Name="PaymentAmountDC" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="PaymentAmountLC" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="dibuatOleh" Type="varchar" MaxLength="50" />
+    <Property Name="dibuatTanggal" Type="datetime" />
+    <Property Name="diubahOleh" Type="varchar" MaxLength="50" />
+    <Property Name="diubahTanggal" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_S02005_TEMP_HS">
+    <Key>
+      <PropertyRef Name="GroupingCode" />
+    </Key>
+    <Property Name="GroupingCode" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="TotalPayment" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="version" Type="int" />
+    <Property Name="CompanyCodeAI" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CUSTOM_S02005_TEMP_IS">
+    <Key>
+      <PropertyRef Name="PONumberSERA" />
+    </Key>
+    <Property Name="GroupingCode" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="paymentDate" Type="datetime" />
+    <Property Name="version" Type="int" />
+    <Property Name="BillingNo" Type="varchar" MaxLength="15" />
+    <Property Name="KuitansiNo" Type="varchar" MaxLength="15" />
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="3" />
+    <Property Name="BusinessAreaCode" Type="varchar" MaxLength="4" />
+    <Property Name="CustomerNo" Type="varchar" MaxLength="10" />
+    <Property Name="SpesNumber" Type="varchar" MaxLength="35" />
+    <Property Name="SONumber" Type="varchar" MaxLength="15" />
+    <Property Name="Salesman" Type="varchar" MaxLength="10" />
+    <Property Name="ChasisNumber" Type="varchar" MaxLength="18" />
+    <Property Name="PONumberSERA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VersionPOSERA" Type="int" />
+    <Property Name="PaymentAmountDC" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="PaymentAmountLC" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="flags" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyCodeAI" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CUSTOM_S02007">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionDataID" Type="int" />
+    <Property Name="PONUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="VERSIONPOSERA" Type="int" />
+    <Property Name="BILLINGNO" Type="varchar" MaxLength="50" />
+    <Property Name="INVOICERECEIPTDATE" Type="datetime" />
+    <Property Name="DATAVERSION" Type="int" />
+    <Property Name="payPlan" Type="datetime" />
+    <Property Name="dibuatOleh" Type="varchar" MaxLength="50" />
+    <Property Name="dibuatTanggal" Type="datetime" />
+    <Property Name="diubahOleh" Type="varchar" MaxLength="50" />
+    <Property Name="diubahTanggal" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_TRANSACTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Acknowledge" Type="bit" />
+    <Property Name="TicketNo" Type="varchar" MaxLength="1000" />
+    <Property Name="Message" Type="varchar" MaxLength="1000" />
+    <Property Name="ClientTag" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedWho" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedWhen" Type="datetime" />
+    <Property Name="ChangedWho" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedWhen" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_TRANSACTIONDATA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionID" Type="int" Nullable="false" />
+    <Property Name="TransGUID" Type="varchar" MaxLength="40" />
+    <Property Name="DocumentNumber" Type="varchar" MaxLength="30" />
+    <Property Name="FileType" Type="varchar" MaxLength="20" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="15" />
+    <Property Name="DestinationUser" Type="varchar" MaxLength="10" />
+    <Property Name="Key1" Type="varchar" MaxLength="20" />
+    <Property Name="Key2" Type="varchar" MaxLength="20" />
+    <Property Name="Key3" Type="varchar" MaxLength="20" />
+    <Property Name="DataLength" Type="int" />
+    <Property Name="RowStatus" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedWho" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedWhen" Type="datetime" />
+    <Property Name="ChangedWho" Type="varchar" MaxLength="50" />
+    <Property Name="ChangedWhen" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_TRANSACTIONDATADETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionDataID" Type="int" Nullable="false" />
+    <Property Name="Data" Type="varchar" MaxLength="2000" />
+    <Property Name="dibuatOleh" Type="varchar" MaxLength="50" />
+    <Property Name="dibuatTanggal" Type="datetime" />
+    <Property Name="diubahOleh" Type="varchar" MaxLength="50" />
+    <Property Name="diubahTanggal" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CUSTOM_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="200" />
+    <Property Name="Password" Type="varchar" MaxLength="200" />
+    <Property Name="UserCode" Type="varchar" MaxLength="200" />
+    <Property Name="PassCode" Type="varchar" MaxLength="200" />
+    <Property Name="ClientTag" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CUSTOMIR">
+    <Key>
+      <PropertyRef Name="PONUMBER" />
+    </Key>
+    <Property Name="PONUMBER" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACTUALRECEIVEDINV" Type="datetime" />
+    <Property Name="HARGADELIVERYAP" Type="varchar" MaxLength="50" />
+    <Property Name="INVDATE" Type="datetime" />
+    <Property Name="INVNO" Type="varchar" MaxLength="50" />
+    <Property Name="KETBAYAR" Type="varchar" MaxLength="50" />
+    <Property Name="NOFAKTURPAJAK" Type="varchar" MaxLength="50" />
+    <Property Name="TGLSERAHTAGIHAN" Type="datetime" />
+    <Property Name="TERMOFPAYMENT" Type="int" />
+    <Property Name="NOAP" Type="varchar" MaxLength="50" />
+    <Property Name="TGLPEMBAYARAN" Type="datetime" />
+    <Property Name="KETTAGIHAN" Type="varchar" MaxLength="50" />
+    <Property Name="ESTIMATEDPAYMENTDATE" Type="datetime" />
+    <Property Name="INVOICESTATUS" Type="varchar" MaxLength="50" />
+    <Property Name="REASONREJECTIONINVOICE" Type="varchar" MaxLength="100" />
+    <Property Name="BPHNUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_BY" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_DATE" Type="datetime" />
+    <Property Name="REVISEDATE" Type="datetime" />
+    <Property Name="isRevised" Type="bit" />
+    <Property Name="xmlStatus" Type="varchar" MaxLength="50" />
+    <Property Name="xmlCreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="xmlCreatedDate" Type="datetime" />
+    <Property Name="xmlModifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="xmlModifiedDate" Type="datetime" />
+    <Property Name="xmlModifiedDateInvNo" Type="datetime" />
+    <Property Name="xmlModifiedByInvNo" Type="varchar" MaxLength="100" />
+    <Property Name="xmlCreatedDateInvNo" Type="datetime" />
+    <Property Name="xmlCreatedByInvNo" Type="varchar" MaxLength="100" />
+    <Property Name="xmlModifiedDateFaktur" Type="datetime" />
+    <Property Name="xmlModifiedByFaktur" Type="varchar" MaxLength="100" />
+    <Property Name="xmlCreatedDateFaktur" Type="datetime" />
+    <Property Name="xmlCreatedByFaktur" Type="varchar" MaxLength="100" />
+    <Property Name="xmlStatusInvNo" Type="varchar" MaxLength="50" />
+    <Property Name="xmlStatusByEngine" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CUSTOMPO">
+    <Key>
+      <PropertyRef Name="PONUMBER" />
+    </Key>
+    <Property Name="PONUMBER" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TGLPO" Type="datetime" />
+    <Property Name="PRNUMBERSAP" Type="varchar" MaxLength="50" />
+    <Property Name="HARGAOPTIONAL" Type="float" />
+    <Property Name="TGLKIRIMCABVENDOR" Type="datetime" />
+    <Property Name="KETPO" Type="varchar" MaxLength="50" />
+    <Property Name="PPNOPTIONAL" Type="varchar" MaxLength="50" />
+    <Property Name="CABANGVENDOR" Type="varchar" MaxLength="50" />
+    <Property Name="DESCCHANGEPO" Type="varchar" MaxLength="100" />
+    <Property Name="DESCPO" Type="varchar" MaxLength="50" />
+    <Property Name="DISC" Type="float" />
+    <Property Name="HARGABBN" Type="float" />
+    <Property Name="HARGADPP" Type="float" />
+    <Property Name="HARGAPPNUNIT" Type="float" />
+    <Property Name="MAINTYPEUNIT" Type="varchar" MaxLength="50" />
+    <Property Name="PRICELIST" Type="float" />
+    <Property Name="PROMISEDLVDATEPO" Type="datetime" />
+    <Property Name="TGLCHANGEPO" Type="datetime" />
+    <Property Name="VENDORID" Type="varchar" MaxLength="10" />
+    <Property Name="VENDORNAME" Type="varchar" MaxLength="50" />
+    <Property Name="BIAYAPENGIRIMAN" Type="float" />
+    <Property Name="CITY" Type="varchar" MaxLength="50" />
+    <Property Name="BENTUKAKHIRUNIT" Type="varchar" MaxLength="50" />
+    <Property Name="HISTORYPO" Type="varchar" MaxLength="50" />
+    <Property Name="TGLMASUKKAROSERI" Type="datetime" />
+    <Property Name="TGLSELESAIKAROSERI" Type="datetime" />
+    <Property Name="PURCHASESTATUS" Type="varchar" MaxLength="50" />
+    <Property Name="POSTATUSID" Type="varchar" MaxLength="50" />
+    <Property Name="ONTHEROADPRICE" Type="float" />
+    <Property Name="EXPECTEDDATEDELIVERED" Type="datetime" />
+    <Property Name="COLOR" Type="varchar" MaxLength="50" />
+    <Property Name="UNITDELIVERYADDRESS" Type="varchar" MaxLength="100" />
+    <Property Name="ACTUALDATEDELIVEREDUNIT" Type="datetime" />
+    <Property Name="REMARKSPOVENDOR" Type="varchar" MaxLength="500" />
+    <Property Name="REMARKSCARROSSERIE" Type="varchar" MaxLength="500" />
+    <Property Name="ACTUALRECEIVEDBPKBHOFROMBRANCH" Type="datetime" />
+    <Property Name="DELIVERYCOST" Type="float" />
+    <Property Name="CARROSERIEVENDORNAME" Type="varchar" MaxLength="50" />
+    <Property Name="ACCESORIESADDRESS" Type="varchar" MaxLength="500" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="500" />
+    <Property Name="DODATE" Type="datetime" />
+    <Property Name="DONUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_BY" Type="varchar" MaxLength="50" />
+    <Property Name="MODIFIED_DATE" Type="datetime" />
+    <Property Name="HARGABBN_INPUT" Type="float" />
+    <Property Name="HARGADPP_INPUT" Type="float" />
+    <Property Name="HARGAPPNUNIT_INPUT" Type="float" />
+    <Property Name="CARMODEL" Type="varchar" MaxLength="50" />
+    <Property Name="CARSERIES" Type="varchar" MaxLength="50" />
+    <Property Name="COMPANYCODE" Type="varchar" MaxLength="100" />
+    <Property Name="COMPANYNAME" Type="varchar" MaxLength="100" />
+    <Property Name="ATMT" Type="varchar" MaxLength="50" />
+    <Property Name="KODECABANG" Type="varchar" MaxLength="30" />
+    <Property Name="CABANGTRAC" Type="varchar" MaxLength="50" />
+    <Property Name="MERK" Type="varchar" MaxLength="50" />
+    <Property Name="TYPEUNIT" Type="varchar" MaxLength="50" />
+    <Property Name="VARIAN" Type="varchar" MaxLength="50" />
+    <Property Name="VARIAN_INPUT" Type="varchar" MaxLength="50" />
+    <Property Name="MERK_INPUT" Type="varchar" MaxLength="50" />
+    <Property Name="POQTY" Type="int" />
+    <Property Name="PRSAP" Type="varchar" MaxLength="50" />
+    <Property Name="REASONREVISEDBYVENDOR" Type="varchar" MaxLength="500" />
+    <Property Name="REVISEDDATE" Type="datetime" />
+    <Property Name="isRevised" Type="bit" />
+    <Property Name="TGLGI" Type="datetime" />
+    <Property Name="RefDocNo" Type="varchar" MaxLength="50" />
+    <Property Name="CODEGROUP" Type="varchar" MaxLength="20" />
+    <Property Name="TOTALPAYMENT" Type="decimal" Precision="17" Scale="4" />
+    <Property Name="LOCALPRICE" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="3" />
+    <Property Name="CLIENT" Type="varchar" MaxLength="50" />
+    <Property Name="FISCALYEAR" Type="varchar" MaxLength="4" />
+    <Property Name="PROPOSALNUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="ITEM" Type="varchar" MaxLength="50" />
+    <Property Name="APPROVALDATETIME" Type="datetime" />
+    <Property Name="flagRejection" Type="int" />
+    <Property Name="PICKAROSERI" Type="varchar" MaxLength="40" />
+    <Property Name="NOTELEPONKAROSERI" Type="varchar" MaxLength="30" />
+    <Property Name="BENTUKKAROSERI" Type="varchar" MaxLength="50" />
+    <Property Name="SHIPPINGADDRESS1" Type="varchar" MaxLength="132" />
+    <Property Name="SHIPPINGADDRESS2" Type="varchar" MaxLength="132" />
+    <Property Name="SHIPPINGADDRESS3" Type="varchar" MaxLength="132" />
+    <Property Name="SHIPPINGADDRESS4" Type="varchar" MaxLength="132" />
+    <Property Name="BBNADDRESS1" Type="varchar" MaxLength="500" />
+    <Property Name="BBNADDRESS2" Type="varchar" MaxLength="132" />
+    <Property Name="BBNADDRESS3" Type="varchar" MaxLength="132" />
+    <Property Name="BBNADDRESS4" Type="varchar" MaxLength="132" />
+    <Property Name="xmlModifiedDate" Type="datetime" />
+    <Property Name="xmlModifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="xmlCreatedDate" Type="datetime" />
+    <Property Name="xmlCreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="xmlStatus" Type="varchar" MaxLength="50" />
+    <Property Name="updateqty" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CUSTOMPROPOSALPAYMENT">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProposalNumber" Type="varchar" MaxLength="12" />
+    <Property Name="CompCode" Type="varchar" MaxLength="4" />
+    <Property Name="Year" Type="varchar" MaxLength="4" />
+    <Property Name="DocumentNumber" Type="varchar" MaxLength="10" />
+    <Property Name="PurchaseDocument" Type="varchar" MaxLength="10" />
+    <Property Name="Item" Type="varchar" MaxLength="5" />
+    <Property Name="ApproveDate" Type="date" />
+    <Property Name="ApproveTime" Type="time" Precision="7" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Function Name="sp_DeleteAllTempHSISS02005" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_PaymentSeraToAI_HS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_PaymentSeraToAI_IS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_UpdateCustomPOStatusPOId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PONUMBER" Type="varchar" Mode="In" />
+    <Parameter Name="POSTATUSID" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="CUSTOM_LOG" EntityType="Self.CUSTOM_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_S02005_HS" EntityType="Self.CUSTOM_S02005_HS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_S02005_IS" EntityType="Self.CUSTOM_S02005_IS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_S02005_TEMP_HS" EntityType="Self.CUSTOM_S02005_TEMP_HS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_S02005_TEMP_IS" EntityType="Self.CUSTOM_S02005_TEMP_IS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_S02007" EntityType="Self.CUSTOM_S02007" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_TRANSACTION" EntityType="Self.CUSTOM_TRANSACTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_TRANSACTIONDATA" EntityType="Self.CUSTOM_TRANSACTIONDATA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_TRANSACTIONDATADETAIL" EntityType="Self.CUSTOM_TRANSACTIONDATADETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOM_USER" EntityType="Self.CUSTOM_USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMIR" EntityType="Self.CUSTOMIR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMPO" EntityType="Self.CUSTOMPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMPROPOSALPAYMENT" EntityType="Self.CUSTOMPROPOSALPAYMENT" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

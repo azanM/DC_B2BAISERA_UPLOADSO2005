@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Kantor\Project\SERA\Backup\WSPublish" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Microsoft.Practices.Unity.Configuration.dll" publishTime="10/11/2011 11:23:26" />
+    <file relUrl="Web.config" publishTime="09/27/2013 13:01:55" />
+    <file relUrl="bin/Infrastructure.Data.dll" publishTime="11/05/2012 09:01:01" />
+    <file relUrl="WsB2BAISERA.asmx" publishTime="08/22/2013 11:28:33" />
+    <file relUrl="bin/B2BSERAWebService.pdb" publishTime="09/27/2013 11:50:06" />
+    <file relUrl="bin/B2BSERAWebService.dll" publishTime="09/27/2013 11:50:06" />
+    <file relUrl="bin/Microsoft.Practices.Unity.dll" publishTime="04/16/2010 13:42:32" />
+    <file relUrl="Model/DataAccess/B2BAISERA.edmx.sql" publishTime="08/28/2013 13:14:45" />
+    <file relUrl="Global.asax" publishTime="08/28/2013 13:00:09" />
+    <file relUrl="bin/Infrastructure.Data.EntityFramework.dll" publishTime="11/05/2012 09:01:02" />
+    <file relUrl="bin/Microsoft.Practices.Unity.Interception.dll" publishTime="04/16/2010 13:42:32" />
+  </publishProfile>
+</publishData>
